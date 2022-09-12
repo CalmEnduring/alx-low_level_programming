@@ -1,2 +1,1 @@
-#!/bin/bash
-gcc main.c | c=$FILE 
+gcc main.c | c=$FILE "\n"
