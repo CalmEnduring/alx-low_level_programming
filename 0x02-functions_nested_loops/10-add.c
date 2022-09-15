@@ -5,11 +5,13 @@
  * @num1: 1st input
  * @num2: 2nd input
  *
- * Return: sum of integers (n)
+ * Return: sum of integers
  */
-int add(int num1, int num2)
+int add(int , int)
 {
-	int n = num1 + num2
+	int n
+	
+	n = add(89, 9);
 
 	return (n);
 }
