@@ -6,8 +6,18 @@
  */
 int main(void)
 {
-	char d:
+	char d;
 	char e;
 
-	for (d = 'a'; a <= 'z'; d++)
+	for (d = 'a'; d <= 'z'; d++)
+	{
+		putchar(d);
+	}
+	for (e = 'A'; e <= 'Z'; e++)
+	{
+		putchar(e);
+	}
+	putchar('\n');
+	return (0);
+}
 
