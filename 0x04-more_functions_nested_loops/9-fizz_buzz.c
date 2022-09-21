@@ -14,7 +14,7 @@ int main(void)
 
 	for (o = 1; o <= 100; o++)
 	{
-		if ((o % 3 == 0) && (o % 5 == 0))
+		if (o % 3 == 0 && o % 5 == 0)
 		{
 			printf("FizzBuzz");
 		}
@@ -30,8 +30,7 @@ int main(void)
 		{
 			printf("%d", o);
 		}
-
-		if (0 < 100)
+		if (o < 100)
 		{
 			printf(" ");
 		}
