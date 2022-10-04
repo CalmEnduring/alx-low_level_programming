@@ -2,16 +2,11 @@
 /**
  * add - adds two integers
  *
- * @num1: 1st input
- * @num2: 2nd input
+ * @int: integer input
  *
  * Return: sum of integers
  */
-int add(int , int)
+int add(int a, int b)
 {
-	int n
-	
-	n = add(89, 9);
-
-	return (n);
+	return (a + b);
 }
