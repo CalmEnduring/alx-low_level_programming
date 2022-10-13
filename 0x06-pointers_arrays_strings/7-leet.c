@@ -13,7 +13,7 @@ char *leet(char *s)
 
 	for (index1 = 0; *(s + index1); index1++)
 	{
-		for (index2 = 0; index2 < 9; index2++)
+		for (index2 = 0; index2 <= 9; index2++)
 		{
 			if (rplc1[index2] == s[index1])
 			{
