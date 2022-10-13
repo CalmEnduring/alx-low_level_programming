@@ -7,13 +7,12 @@
   */
 char *cap_string(char *str)
 {
-	int index1 = 0;
-	int index2;
+	int index1 = 0, index2;
 	char separators[] = " \t\n,;.!?\"(){}";
 
 	while (*(str + index1))
 	{
-		if (*(str + index1) >= 'a' && (*str + index1) <= 'z')
+		if (*(str + index1) >= 'a' && *(str + index1) <= 'z')
 		{
 			if (index1 == 0)
 			{
