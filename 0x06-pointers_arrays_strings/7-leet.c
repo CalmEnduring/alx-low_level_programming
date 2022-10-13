@@ -11,7 +11,7 @@ char *leet(char *s)
 	char rplc1[] = "aAeEoOtTlL";
 	char rplc2[] = "4433007711";
 
-	for (index1 = 0; s[index1]; index1++)
+	for (index1 = 0; *(s + index1); index1++)
 	{
 		for (index2 = 0; index2 < 9; index2++)
 		{
