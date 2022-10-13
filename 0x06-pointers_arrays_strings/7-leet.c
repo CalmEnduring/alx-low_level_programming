@@ -5,21 +5,21 @@
   *
   * Return: str
   */
-char *leet(char *str)
+char *leet(char *s)
 {
 	int index1, index2;
 	char rplc1[] = "aAeEoOtTlL";
 	char rplc2[] = "4433007711";
 
-	for (index1 = 0; str[index1]; index1++)
+	for (index1 = 0; s[index1]; index1++)
 	{
 		for (index2 = 0; index2 < 9; index2++)
 		{
-			if (rplc1[index2] == str[index1])
+			if (rplc1[index2] == s[index1])
 			{
-				str[index1] = rplc2[index2];
+				s[index1] = rplc2[index2];
 			}
 		}
 	}
-	return (str);
+	return (s);
 }
