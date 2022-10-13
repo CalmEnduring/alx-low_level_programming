@@ -5,7 +5,7 @@
   *
   * Return: str
   */
-char *leet(char *s)
+char *leet(char *)
 {
 	int index1, index2;
 	char rplc1[] = "aAeEoOtTlL";
