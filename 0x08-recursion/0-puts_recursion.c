@@ -7,9 +7,8 @@
   */
 void _puts_recursion(char *s)
 {/* if the value pointed to in s == NULL, execute block */
-	if (*s == '\0')
+	if (*s == '\0')/* terminates strings */
 	{
-		_putchar('\0');/* terminates strings */
 		_putchar('\n');
 		return;/* returns void */
 	}
