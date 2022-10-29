@@ -13,23 +13,20 @@ char *create_array(unsigned int size, char c)
 {
 	char *space; /* point to the dynamic storage */
 	unsigned int index;
-
+	
+	if (size == 0) /* if size is 0, terminate with NULL */
+	{
+		return (NULL);
+	}
 	space = malloc(size * sizeof(char)); /* size of storage to allocate */
-
+	if (space == NULL) /* failure */
+	{
+		return (NULL);
+	}
 	for (index = 0; index < size; index++) /* loops for each element in array */
 	{
-		if (size == 0) /* if size is 0, terminate with NULL */
-		{
-			return (NULL);
-		}
-		else if (space == NULL) /* failure */
-		{
-			return (NULL);
-		}
-		else /* assigns c to  indexed value */
-		{
-			space[index] = c;
-		}
-	} /* returns a pointer to a string */
+		space[index] = c; /* assinged c to the indexed value */
+	}
+	/* returns a pointer to a string */
 	return (space);
 }
