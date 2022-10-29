@@ -19,8 +19,8 @@ char *_strdup(char *str)
 	{
 		index++;
 	}
-
-	s = malloc((index * sizeof(char) + 1)); /* allocates dynamic storage for duplicate string */
+	/* allocates dynamic storage for duplicate string */
+	s = malloc((index * sizeof(char) + 1));
 	if (s ==  NULL) /* failure if insuficient storage */
 	{
 		return (NULL);
