@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
 /**
  * _strdup - Duplicates a string and returns a pointer
  * @str: String to duplicate
@@ -9,21 +8,26 @@
  */
 char *_strdup(char *str)
 {
-	unsigned int index;
+	int index = 1, index2 = 0;
 	char *s;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	s = malloc(strlen(str) * sizeof(char));
-	if (sizeof(s) < sizeof(str))
+	while (str[index] != '\0')
+	{
+		index++;
+	}
+
+	s = malloc((index * sizeof(char) + 1));
+	if (s ==  NULL)
 	{
 		return (NULL);
 	}
-	for (index = 0; index <= strlen(str); index++)
+	for (; index2 < index; index2++)
 	{
-		s[index] = str[index];
+		s[index2] = str[index2];
 	}
 	return (s);
 }
