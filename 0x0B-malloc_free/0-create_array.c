@@ -13,7 +13,7 @@ char *create_array(unsigned int size, char c)
 {
 	char *space; /* point to the dynamic storage */
 	unsigned int index;
-	
+
 	if (size == 0) /* if size is 0, terminate with NULL */
 	{
 		return (NULL);
