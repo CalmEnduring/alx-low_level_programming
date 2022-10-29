@@ -9,25 +9,25 @@
 char *_strdup(char *str)
 {
 	int index = 1, index2 = 0;
-	char *s;
+	char *s; /* pointer to dynamic string */
 
-	if (str == NULL)
+	if (str == NULL) /* failure */
 	{
 		return (NULL);
 	}
-	while (str[index] != '\0')
+	while (str[index] != '\0') /* reads string */
 	{
 		index++;
 	}
 
-	s = malloc((index * sizeof(char) + 1));
-	if (s ==  NULL)
+	s = malloc((index * sizeof(char) + 1)); /* allocates dynamic storage for duplicate string */
+	if (s ==  NULL) /* failure if insuficient storage */
 	{
 		return (NULL);
 	}
-	for (; index2 < index; index2++)
+	for (; index2 < index; index2++) /* duplicates str into s */
 	{
 		s[index2] = str[index2];
 	}
-	return (s);
+	return (s); /* returns pointer to duplicate string */
 }
