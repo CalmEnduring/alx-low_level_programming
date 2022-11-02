@@ -20,7 +20,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (mem == NULL) /* malloc failure */
 		return (NULL);
 	/* access each element in newly allocated memory */
-	for (index = 0; index <= (nmemb * size); index++)
+	for (index = 0; index < (nmemb * size); index++)
 		mem[index] = 0; /* initialize each element to 0 */
 	/* return pointer */
 	return (mem);
