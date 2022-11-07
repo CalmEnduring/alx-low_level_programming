@@ -24,9 +24,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	while (name[index])
 		index++;
 	index++; /* increment once more for NULL term */
-	while (owner[index])
-		index2++;
-	index2++; /* increment once more for NULL term */
 	/* allocate space for name */
 	ndog->name = malloc(sizeof(char) * index);
 	if (ndog->name == NULL)
@@ -34,6 +31,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(ndog); /* free spaced allocated for structure */
 		return (NULL);
 	}
+	/* loop through each element in name string */
+	for (index3 = 0; index3 < index; index3++)
+	{ /* copy name into name in struct */
+		ndog->name[index3] = name[index3];
+	}
+	while (owner[index])
+		index2++;
+	index2++; /* increment once more for NULL term */	
 	/* allocate space for owner */
 	ndog->owner = malloc(sizeof(char) * index2);
 	if (ndog->owner == NULL) /* malloc failure */
@@ -41,12 +46,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(ndog->name); /* free space allocated for name in struct */
 		free(ndog); /* free space allocated for struct */
 		return (NULL);
-	}
-	/* loop through each element in name string */
-	for (index3 = 0; index3 < index; index3++)
-	{ /* copy name into name in struct */
-		ndog->name[index3] = name[index3];
-	}
+	}	
 	ndog->age = age; /* copy age into age in struct */
 	/* loop through each element in owner string */
 	for (index3 = 0; index3 < index2; index3++)
