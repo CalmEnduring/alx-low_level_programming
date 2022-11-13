@@ -11,20 +11,21 @@ int int_index(int *array, int size, int (*cmp)(int))
 {
 	int index;
 
-	if (size <= 0)
-		return (-1);
-	/* account for NULL arguments */
-	if (array == NULL && cmp == NULL)
-		return (-1);
-
-	index = 0;
-	while (index < size)
-	{ /* compare element */
-		if (cmp(array[index]) != 0)
+	if (size > 0)
+	{
+		/* account for NULL arguments */
+		if (array != NULL && cmp != NULL)
 		{
-			return (index);
+			index = 0;
+			while (index < size)
+			{ /* compare element */
+				if (cmp(array[index]) != 0)
+				{
+					return (index);
+				}
+				index++;
+			}
 		}
-		index++;
 	}
 	/* failure to find element */
 	return (-1);
