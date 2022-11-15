@@ -15,16 +15,15 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	va_start(ap, n); /* initializes argument list */
 
+	if (separator == NULL) /* don't print separator */
+	{
+		separator = "";
+	}
 	for (index = 0; index < n; index++)
 	{
-		if (separator == NULL) /* print numbers without separator */
-		{
-			printf("%d", va_arg(ap, int));
-		}
-		else /* prints number with separator */
-		{
-			printf("%d%s", va_arg(ap, int), separator);
-		}
+		printf("%d", va_arg(ap, int));
+		if (index < n - 1) /* don't print separator after last int */
+			printf("%s", separator);
 	}
 	printf("\n");
 	va_end(ap); /* end variadic function */
