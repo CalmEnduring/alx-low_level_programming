@@ -16,12 +16,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int index, index2, ss;
 	/* ss is the size of the first n bytes of s2 */
 	ss = sizeof(s2) - (sizeof(s2) - n);
-	/* if n is >= s2, use whole of s2 */
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	/* if n is greater or equal to s2, use the whole string */
 	if (n >= sizeof(s2))
 	{
 		mem = malloc(sizeof(s1) + sizeof(s2));
 	}
-	else /* allocate size of s1 + first n bytes of s2 */
+	else
 	{
 		mem = malloc(sizeof(s1) + ss);
 	}
@@ -30,14 +34,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	/* copies s1 into mem */
 	for (index = 0; index <= sizeof(s1); index++)
-	{
 		mem[index] = s1[index];
-	}
 	/* concatenates s2 into mem */
 	for (index2 = 0; index2 < n; index2++, index++)
-	{
 		mem[index] = s2[index2];
-	}
 	/* terminates string */
 	mem[index] = '\0';
 	return (mem); /* returns pointer to string */
