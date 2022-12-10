@@ -1,6 +1,7 @@
 #include "lists.h"
 /**
-  * insert_dnodeint_at_index - inserts a node at nth index in dlistint_t list
+  * insert_dnodeint_at_index - inserts a node at nth index
+  * in dlistint_t list
   * @h: head of linked list
   * @idx: index of list
   * @n: data to insert
