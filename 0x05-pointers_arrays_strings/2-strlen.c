@@ -7,7 +7,7 @@
   */
 int _strlen(char *s)
 {
-	int i = 1;
+	int i = 0;
 
 	/* loops through the string until NULL */
 	while (s[i] != '\0')
