@@ -5,15 +5,12 @@
   */
 void puts2(char *str)
 {
-	/**
-	  * iterate through string until end of string
-	  * by dereferencing pointer
-	  */
-	while (*str)
-	{	/* print dereference value */
-		_putchar(*str);
-		/* increment pointer by 2 */
-		str += 2;
+	int i = 0;
+
+	while (str[i] != '\0')
+	{
+		_putchar(str[i]);
+		i += 2;
 	}
-	_putchar('\n'); /* newline */
+	_putchar('\n');
 }
