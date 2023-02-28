@@ -9,7 +9,7 @@ void puts2(char *str)
 	  * iterate through string until end of string
 	  * by dereferencing pointer
 	  */
-	while (*str != '\0')
+	while (*str)
 	{	/* print dereference value */
 		_putchar(*str);
 		/* increment pointer by 2 */
