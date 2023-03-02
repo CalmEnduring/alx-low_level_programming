@@ -15,7 +15,7 @@ void puts_half(char *str)
 	}
 
 	/* if number is odd */
-	if (!(n % 2 == 0))
+	if (n % 2 == 1)
 	{	/* make length even and divide by 2 */
 		n = (n - 1) / 2;
 		n += 1;
