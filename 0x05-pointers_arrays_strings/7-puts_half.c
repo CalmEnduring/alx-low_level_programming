@@ -18,6 +18,7 @@ void puts_half(char *str)
 	if (!(n % 2 == 0))
 	{	/* make length even and divide by 2 */
 		n = (n - 1) / 2;
+		n += 1;
 	}
 
 	/* iterate from the start of the second half */
