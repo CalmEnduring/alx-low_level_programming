@@ -5,12 +5,18 @@
   */
 void puts2(char *str)
 {
-	int i = 0;
+	int i = 0, j;
 
+	/* read the string first */
 	while (str[i] != '\0')
 	{
-		_putchar(str[i]);
-		i += 2;
+		i++;
 	}
-	_putchar('\n');
+
+	/* iterate through string 2 characters at a time */
+	for (j = 0; j < i; j += 2)
+	{	/* print character */
+		_putchar(str[j]);
+	}
+	_putchar('\n'); /* newline */
 }
