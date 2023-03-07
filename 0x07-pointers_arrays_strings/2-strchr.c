@@ -13,17 +13,19 @@ char *_strchr(char *s, char c)
 	/* iterate over string using pointer arithmetic */
 	while (*s)
 	{
-		/* if character in string matches given character */
+		/* if character in string match given character */
 		if (*s == c)
 		{
-			/* return that first occurence + rest of string */
+			/* return pointer to s */
 			return (s);
 		}
-		/* increment index position */
 		s++;
 	}
-	s++;
-	*s = '\0';
-	/* return NULL if character not found */
-	return (s);
+	/* if given character is NULL */
+	if (c == '\0')
+	{
+		/* return pointer to s */
+		return (s);
+	}
+	return ('\0');
 }
