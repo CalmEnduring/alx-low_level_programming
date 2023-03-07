@@ -10,27 +10,28 @@
   */
 char *_strstr(char *haystack, char *needle)
 {
-	/* if needle empty return haystack */
-	if (*needle == '\0')
-		return (haystack);
-	/* iterate over the needle */
-	while (*needle)
+	char *h, *n;
+
+	/* iterate over the haystack */
+	while (*haystack)
 	{
-		/* iterate over haystack */
-		while (*haystack)
+		h = haystack;
+		n = needle;
+
+		/* iterate over needle, if needle and haystack matches */
+		while (*h == *n && *n)
 		{
-			/* if the needle is in the haystack */
-			if (*needle == *haystack)
-			{
-				/* return the needle in the haystack */
-				return (haystack);
-			}
-			/* move to next position in haystack */
-			haystack++;
+			h++; /* onto next character */
+			n++; /* onto next character */
 		}
-		/* move to next position in neelde */
-		needle++;
+		/* if needle empty */
+		if (*n == '\0')
+		{
+			return (haystack);
+		}
+		/* move to the next position in haystack */
+		haystack++;
 	}
-	/* if needle not found return NULL */
+	/* if nothing found, return NUL */
 	return (NULL);
 }
