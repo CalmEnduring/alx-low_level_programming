@@ -22,6 +22,7 @@ char *_strchr(char *s, char c)
 		/* increment index position */
 		s++;
 	}
-	/* return NULL of character not found */
-	return ('\0');
+	*s = '\0';
+	/* return NULL if character not found */
+	return (s);
 }
