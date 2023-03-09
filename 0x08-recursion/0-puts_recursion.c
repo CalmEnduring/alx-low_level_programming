@@ -12,5 +12,8 @@ void _puts_recursion(char *s)
 		s++; /* move to next character */
 		_puts_recursion(s); /* recur */
 	}
-	_putchar('\n'); /* newline */
+	else
+	{
+		_putchar('\n'); /* newline */
+	}
 }
