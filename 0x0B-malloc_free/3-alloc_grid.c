@@ -32,7 +32,9 @@ int **alloc_grid(int width, int height)
 		if (twoD[i] == NULL) /* return NULL if no space */
 		{
 			for (j = 1; j >= 0; j--)
+			{
 				free(twoD[j]);
+			}
 			free(twoD);
 			return (NULL);
 		}
