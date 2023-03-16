@@ -8,6 +8,7 @@
   */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
+	unsigned int i;
 	char *array;
 
 	/* number of elements and size cannot be 0 */
@@ -21,7 +22,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 
 	/* memory set to 0 */
-	*array = 0;
+	for (i = 0; i < nmemb; i++)
+		array[i] = 0;
 
 	return (array); /* return pointer to array */
 }
