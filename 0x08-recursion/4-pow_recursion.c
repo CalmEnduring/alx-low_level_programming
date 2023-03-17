@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-  * pow_recursion - returns the value of x to the power of
+  * _pow_recursion - returns the value of x to the power of
   * @x: floor number
   * @y: exponent
   *
