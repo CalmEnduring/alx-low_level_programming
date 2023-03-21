@@ -18,8 +18,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (name != NULL && owner != NULL)
 	{
-		name_l = len(name); /* get length of name */
-		owner_l = len(owner); /* get length of owner */
+		name_l = len(name) + 1; /* get length of name */
+		owner_l = len(owner) + 1; /* get length of owner */
 
 		nudog = malloc(sizeof(dog_t)); /* assign space for struct */
 		if (nudog == NULL) /* allocation failure */
@@ -53,12 +53,12 @@ dog_t *new_dog(char *name, float age, char *owner)
   */
 int len(char *s)
 {
-	int i = 0;
+	int c = 0;
 
-	while (s[i])
-		i++;
+	for (; *s != '\0'; s++)
+		c++;
 
-	return (i);
+	return (c);
 }
 /**
   * copy - copies a string to a destinaion
@@ -69,12 +69,11 @@ int len(char *s)
   */
 char *copy(char *dest, char *src)
 {
-	int i = 0;
+	int i;
 
-	while (src[i])
+	for (i = 0; src[i] != '\0'; i++)
 	{
 		dest[i] = src[i];
-		i++;
 	}
 	dest[i] = '\0';
 	return (dest);
