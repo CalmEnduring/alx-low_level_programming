@@ -10,19 +10,46 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *nudog; /* pointer to struct dog */
+	int name_l = 0, owner_l = 0, i = 0; /* iterators */
 
-	/* allocate space for new struct */
-	nudog = malloc(sizeof(struct dog));
-	if (nudog == NULL) /* if no space available */
+	if (name != NULL && owner != NULL)
 	{
-		return (NULL); /* return NULL */
-	}
-	else /* initialize elements of struct */
-	{
-		nudog->name = name;
-		nudog->age = age;
-		nudog->owner = owner;
-	}
+		while (name[name_l]) /* get length of name */
+			name_l++;
 
-	return (nudog); /* return new structure */
+		while (owner[owner_l]) /* get length of owner */
+			owner_l++;
+
+		nudog = malloc(sizeof(dog_t)); /* assign space for struct */
+		if (nudog == NULL) /* allocation failure */
+			return (NULL);
+		/* allocate space for name element */
+		nudog->name = malloc(sizeof(char) * (name_l + 1));
+		if (nudog->name == NULL) /* allocation failure */
+		{
+			free(nudog); /* free space for structure */
+			return (NULL);
+		}
+		/* allocate space for owner element */
+		nudog->owner = malloc(sizeof(char) * (owner_l + 1));
+		if (nudog->owner == NULL) /* allocation failure */
+		{
+			free(nudog->name); /* free space for name */
+			free(nudog); /* free space for structure */
+			return (NULL);
+		}
+		while (name[i]) /* copy name into struct element */
+		{
+			nudog->name[i] = name[i];
+			i++;
+		}
+		i = 0;
+		while (owner[i]) /* copy owner into struct element */
+		{
+			nudog->owner[i] = owner[i];
+			i++;
+		}
+		nudog->age = age; /* initialize age */
+	}
+	return (nudog); /* return new dog */
 }
