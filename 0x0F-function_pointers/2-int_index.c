@@ -23,11 +23,20 @@ int int_index(int *array, int size, int (*cmp)(int))
 		{
 			index = (*cmp)(array[i]); /* compare elements */
 
-			if (index != 0) /* matchf found */
+			if (index != 0) /* match found */
+			{
 				return (i); /* return index */
-			i++; /* move to the next element */
+			}
+			else
+			{
+				i++;
+				continue;
+			}
+			/*else
+			{
+				return (-1);
+			}*/
 		}
+		return (-1);
 	}
-	return (-1); /* no match found */
-
 }
