@@ -10,24 +10,20 @@
   */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	int i; /* iterator */
-	int index = 0; /* index of matching element */
+	int i = 0; /* iterator */
 
-	if (size <= 0) /* array is empty */
+	if (size > 0) /* if array size bigger than 0 */ 
 	{
-		return (-1);
-	}
-	else
-	{
-		for (i = 0; i < size; i++) /* search the array */
+		/* if argeument filled */
+		if (array != NULL && cmp != NULL)
 		{
-			index = (*cmp)(array[i]); /* compare elements */
-
-			if (index != 0) /* match found */
+			while (i < size) /* search the array */
 			{
-				return (i); /* return index */
+				if (cmp(array[i])) /* compare elements */
+						return (i); /* return index */
+				i++;
 			}
 		}
-		return (-1);
 	}
+	return (-1); /* no match found */
 }
