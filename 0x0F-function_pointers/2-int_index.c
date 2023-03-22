@@ -12,7 +12,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i = 0; /* iterator */
 
-	if (size > 0) /* if array size bigger than 0 */ 
+	if (size > 0) /* if array size bigger than 0 */
 	{
 		/* if argeument filled */
 		if (array != NULL && cmp != NULL)
@@ -20,7 +20,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 			while (i < size) /* search the array */
 			{
 				if (cmp(array[i])) /* compare elements */
-						return (i); /* return index */
+					return (i); /* return index */
 				i++;
 			}
 		}
