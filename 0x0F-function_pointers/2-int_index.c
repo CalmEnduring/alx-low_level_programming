@@ -10,7 +10,7 @@
   */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	int i = 0; /* iterator */
+	int i; /* iterator */
 	int index = 0; /* index of matching element */
 
 	if (size <= 0) /* array is empty */
@@ -19,17 +19,13 @@ int int_index(int *array, int size, int (*cmp)(int))
 	}
 	else
 	{
-		while (i < size) /* search the array */
+		for (i = 0; i < size; i++) /* search the array */
 		{
 			index = (*cmp)(array[i]); /* compare elements */
 
 			if (index != 0) /* match found */
 			{
 				return (i); /* return index */
-			}
-			else
-			{
-				i++;
 			}
 		}
 		return (-1);
