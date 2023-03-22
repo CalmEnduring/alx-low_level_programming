@@ -8,6 +8,6 @@
   */
 void print_name(char *name, void (*f)(char *s))
 {
-	/* function call with string argument */
-	(*f)(name);
+	if (name != NULL && f != NULL)
+		f(name);
 }
