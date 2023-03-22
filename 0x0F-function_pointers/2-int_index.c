@@ -27,7 +27,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 				return (i); /* return index */
 			i++; /* move to the next element */
 		}
-		return (-1); /* no match found */
 	}
+	return (-1); /* no match found */
 
 }
