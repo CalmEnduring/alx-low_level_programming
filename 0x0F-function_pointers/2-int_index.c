@@ -14,16 +14,20 @@ int int_index(int *array, int size, int (*cmp)(int))
 	int index = 0; /* index of matching element */
 
 	if (size <= 0) /* array is empty */
-		return (-1);
-
-	while (i < size) /* search the array */
 	{
-		index = (*cmp)(array[i]); /* compare elements */
-
-		if (index != 0) /* matchf found */
-			return (i); /* return index */
-		i++; /* move to the next element */
+		return (-1);
 	}
-	return (-1); /* no match found */
+	else
+	{
+		while (i < size) /* search the array */
+		{
+			index = (*cmp)(array[i]); /* compare elements */
+
+			if (index != 0) /* matchf found */
+				return (i); /* return index */
+			i++; /* move to the next element */
+		}
+		return (-1); /* no match found */
+	}
 
 }
