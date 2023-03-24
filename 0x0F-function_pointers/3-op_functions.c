@@ -55,7 +55,7 @@ int op_div(int a, int b)
 }
 
 /**
-  * op_add - gets the remainder of two integers
+  * op_mod - gets the remainder of two integers
   * @a: int 1
   * @b: int 2
   *
