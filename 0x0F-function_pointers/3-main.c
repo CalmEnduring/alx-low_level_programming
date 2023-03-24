@@ -9,10 +9,8 @@
 int main(int argc, char *argv[])
 {
 	int (*op)(int, int); /* fetch operation variable */
-	int num1 = atoi(argv[1]);
-	int num2 = atoi(argv[3]);
 
-	if (argc != 4) /* too many arguments */
+	if (argc != 4) /* too many or too few arguments */
 	{
 		printf("Error\n");
 		exit(98);
@@ -26,6 +24,6 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	printf("%d\n", op(num1, num2));
+	printf("%d\n", op(atoi(argv[1]), atoi(argv[3])));
 	return (0);
 }
