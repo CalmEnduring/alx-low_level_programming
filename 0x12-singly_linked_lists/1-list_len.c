@@ -10,7 +10,7 @@ size_t list_len(const list_t *h)
 {
 	size_t num_of_el = 0; /* number of elements var */
 
-	for (; h!= NULL; h = h->next) /* traverse through linked lists */
+	for (; h != NULL; h = h->next) /* traverse through linked lists */
 	{
 		num_of_el++; /* increment count */
 	}
