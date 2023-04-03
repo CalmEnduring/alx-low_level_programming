@@ -15,5 +15,5 @@ void free_listint(listint_t *head)
 		head = head->next; /* move to next node */
 		free(temp); /* free current node */
 	}
-	head = NULL; /* indication that head is now empty */
+	free(head);
 }
