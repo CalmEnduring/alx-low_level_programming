@@ -13,7 +13,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	listint_t *newnode;
 	unsigned int i = 1; /* iterator */
 
-	if (*head != NULL) /* if head not EMPTY */
+	if (head != NULL) /* if head not EMPTY */
 	{
 		newnode = malloc(sizeof(listint_t)); /* allocate space for newnode */
 		if (newnode == NULL) /* malloc failure */
