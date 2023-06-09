@@ -3,6 +3,7 @@
 /**
  * main - prints progam's name
  * @argc: count of command line arguments incl. programme name
+ * @argv: commandline arguments
  *
  * Return: 0
  **/
