@@ -16,7 +16,7 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	/* allocates space for each row of data pointing to ints */
 	/* gr sotres address for first element in array */
-	gr = malloc(sizeof(int) * height);
+	gr = malloc(sizeof(int *) * height);
 	if (gr == NULL) /* malloc failure */
 	{
 		free(gr); /* free allocated space */
