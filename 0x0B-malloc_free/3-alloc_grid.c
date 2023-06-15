@@ -12,7 +12,7 @@ int **alloc_grid(int width, int height)
 	int r, c;
 
 	/* function failure */
-	if (width <= 0 \\ height <= 0)
+	if (width <= 0 || height <= 0)
 		return (NULL);
 	/* allocates space for each row of data pointing to ints */
 	/* gr sotres address for first element in array */
