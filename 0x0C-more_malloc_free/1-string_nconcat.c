@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /**
  * string_nconcat - concatenates two strings
  * @s1: string one
@@ -7,32 +8,37 @@
  *
  * Return: pointer to newly allocated space in memory
  */
+#include <string.h> /* Add the string.h header for strlen */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *new_string; /* pointer to allocated storage */
-	unsigned int i1, i2, ss; /* ss is the size of the first n byts of s2 */
+	char *new_string;
+	unsigned int i1, i2, length_s1, length_s2, size;
 
-	ss = sizeof(s2) - (sizeof(s2) - n);
-	if (s1 == NULL) /* if string NULL, treat as empty */
+	if (s1 == NULL)
 		s1 = "";
-	if (s2 == NULL) /* if string NULL, treat as empty */
+	if (s2 == NULL)
 		s2 = "";
 
-	/* if n > || = to s2, use entirety of s2 */
-	if (n >= sizeof(s2))
-		new_string = malloc(sizeof(s1) + sizeof(s2));
+	length_s1 = strlen(s1);
+	length_s2 = strlen(s2);
+
+	if (n >= length_s2)
+		size = length_s1 + length_s2 + 1; /* +1 for null character */
 	else
-		new_string = malloc(sizeof(s1) + ss);
-	/* malloc failure */
+		size = length_s1 + n + 1;
+
+	new_string = malloc(size);
 	if (new_string == NULL)
-		return (NULL);
+		return NULL;
 
-	for (i1 = 0; i1 <= sizeof(s1); i1++) /* iterate through new_string */
-		new_string[i1] = s1[i1]; /* copy s1 into new_string */
+	for (i1 = 0; i1 < length_s1; i1++)
+		new_string[i1] = s1[i1];
 
-	for (i2 = 0; i2 < n; i2++, i1++) /* iterate through new _tring */
-		new_string[i1] = s2[i2]; /* concatenate s2 with new_string */
+	for (i2 = 0; i2 < n && s2[i2] != '\0'; i2++, i1++)
+		new_string[i1] = s2[i2];
 
-	new_string[i1] = '\0'; /* NULL terminate new_string */
-	return (new_string); /* return pointer to new string */
+	new_string[i1] = '\0';
+	return (new_string);
 }
+
