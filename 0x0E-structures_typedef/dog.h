@@ -16,7 +16,7 @@ struct dog
 	char *owner;
 };
 /**
- * @represents struct dog
+ * dog_t - represents struct dog
  *
  * This typedef is used to provide a shortand for the
  * struct dog
