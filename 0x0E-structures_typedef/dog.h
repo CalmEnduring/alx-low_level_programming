@@ -15,6 +15,13 @@ struct dog
 	float age;
 	char *owner;
 };
+/**
+ * @represents struct dog
+ *
+ * This typedef is used to provide a shortand for the
+ * struct dog
+ */
+typedef struct dog dog_t;
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
