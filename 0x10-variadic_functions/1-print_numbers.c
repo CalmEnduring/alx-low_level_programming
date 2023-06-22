@@ -10,23 +10,24 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list args; /* holds argument list information */
-	unsigned int i; /* iterator */
+	unsigned int i = 0; /* iterator */
 
-	if (n == 0) /* no arguments */
-		return;
 
-	va_start(args, n); /* initialize argument list */
+	if ( n > 0)
+	{
+		va_start(args, n); /* initialize argument list */
 
-	/* traverse through argument list */
-	for (i = 0; i < n; i++)
-	{	/* if separator NULL, don't print separator */
-		if (separator == NULL)
+		/* traverse through argument list */
+		while (i < n)
+		{	/* if separator NULL, don't print separator */
 			printf("%d ", va_arg(args, int));
-		else /* include separator */
-			if (i == (n - 1)) /* account for no separator on last arg */
-				printf("%d ", va_arg(args, int));
-			else
-				printf("%d%s ", va_arg(args, int), separator);
+			
+			/* account for no separator on last arg */
+			if (i != n - 1 && separator != NULL)
+				printf("%s", separator);
+			i++;
+		}
+		va_end(args); /* free argument list */
 	}
 	printf("\n"); /* newline */
 }
