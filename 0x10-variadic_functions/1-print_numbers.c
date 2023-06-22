@@ -13,7 +13,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i = 0; /* iterator */
 
 
-	if ( n > 0)
+	if (n > 0)
 	{
 		va_start(args, n); /* initialize argument list */
 
@@ -21,7 +21,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		while (i < n)
 		{	/* if separator NULL, don't print separator */
 			printf("%d ", va_arg(args, int));
-			
+
 			/* account for no separator on last arg */
 			if (i != n - 1 && separator != NULL)
 				printf("%s", separator);
