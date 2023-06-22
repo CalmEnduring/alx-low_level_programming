@@ -20,7 +20,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		/* traverse through argument list */
 		while (i < n)
 		{	/* if separator NULL, don't print separator */
-			printf("%d ", va_arg(args, int));
+			printf("%d", va_arg(args, int));
 
 			/* account for no separator on last arg */
 			if (i != n - 1 && separator != NULL)
