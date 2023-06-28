@@ -8,7 +8,7 @@
  */
 void _puts_recursion(char *s)
 {
-	if (*s != '\0') /* base case, end of recursion */
+	if (*s == '\0') /* base case, end of recursion */
 	{
 		_putchar('\n'); /* newline at the end of string */
 		exit(0); /* exit function */
@@ -16,7 +16,7 @@ void _puts_recursion(char *s)
 	else
 	{
 		_putchar(*s); /* print character */
-		s++; /* move to next character */
+		s++;/* move to next character */
 		_puts_recursion(s); /* call function again */
 	}
 }
