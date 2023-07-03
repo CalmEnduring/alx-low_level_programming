@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 /**
  * print_listint - prints all the elements of a listint_t list
  * @h: listint_t list
@@ -17,6 +18,6 @@ size_t print_listint(const listint_t *h)
 			h = h->next; /* points to next node */
 			non++; /*increment number of nodes */
 		}
-		return (non); /* return number of ndoes */
 	}
+	return (non); /* return number of ndoes */
 }
