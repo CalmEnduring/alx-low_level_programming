@@ -17,7 +17,7 @@ size_t print_listint(const listint_t *h)
 		{
 			printf("%d\n", h->n); /* print list element */
 			h = h->next; /* points to next node */
-			non++; /*increment number of nodes */
+			non++; /* increment number of nodes */
 		}
 	}
 	return (non); /* return number of ndoes */
