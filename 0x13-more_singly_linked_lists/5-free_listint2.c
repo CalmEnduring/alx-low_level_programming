@@ -7,7 +7,7 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *temp; /** 
+	listint_t *temp; /**
 			   * temporarily stores current node of linked list
 			   * before moving to the next node and
 			   * freeing the memory of the current node
