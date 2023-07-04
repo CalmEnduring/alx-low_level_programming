@@ -7,7 +7,7 @@
  */
 int pop_listint(listint_t **head)
 {
-	int popped_data; /* holds the head node's data */
+	int popped_data = 0; /* holds the head node's data */
 	listint_t *newh; /* points to the new head */
 
 	if (head) /* if head is not NULL */
