@@ -10,21 +10,21 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	unsigned int i = 0; /* iterator */
 
-	if (head)
+	if (head) /* if head is not NULL */
 	{
-		while (head)
+		while (head) /* iterate through list until NULL */
 		{
-			if (i == index)
+			if (i == index) /* node found */
 			{
-				return (head);
+				return (head); /* returned found node */
 			}
-			else
+			else /* node not found, continue loop */
 			{
-				head = head->next;
-				i++;
+				head = head->next; /* head points to next node */
+				i++; /* increment index count */
 			}
 		}
 	}
-	return (NULL);
+	return (NULL); /* node doesnt exist, return NULL */
 }
 
