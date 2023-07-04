@@ -9,14 +9,14 @@ int sum_listint(listint_t *head)
 {
 	int sum = 0; /* holds the sum of all data */
 
-	if (head)
+	if (head) /* if head is not NULL */
 	{
-		while (head)
+		while (head) /* iterate through list until NULL */
 		{
-			sum += head->n;
-			head = head->next;
+			sum += head->n; /* add data to sum */
+			head = head->next; /* head points to next node */
 		}
-		return (sum);
+		return (sum); /* return sum of all data in linked list */
 	}
-	return (0);
+	return (0); /* list is empty, return 0 */
 }
