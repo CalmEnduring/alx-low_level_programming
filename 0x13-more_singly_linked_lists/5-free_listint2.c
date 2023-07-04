@@ -7,21 +7,25 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *temp;
+	listint_t *temp; /** 
+			   * temporarily stores current node of linked list
+			   * before moving to the next node and
+			   * freeing the memory of the current node
+			   */
 
-	if (head)
+	if (head) /* if head is not already NULL */
 	{
-		while (*head)
+		while (*head) /* loop through the list */
 		{
-			temp = *head;
-			*head = (*head)->next;
-			free(temp);
+			temp = *head; /* temps holds head */
+			*head = (*head)->next; /* head points to next node */
+			free(temp); /* free what temp is pointing to */
 		}
 	}
-	else
+	else /* if head is NULL */
 	{
-		return;
+		return; /* exit function */
 	}
 
-	*head = NULL;
+	*head = NULL; /* set head to NULL */
 }
