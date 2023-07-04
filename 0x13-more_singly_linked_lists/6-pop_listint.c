@@ -10,7 +10,7 @@ int pop_listint(listint_t **head)
 	int popped_data = 0; /* holds the head node's data */
 	listint_t *newh; /* points to the new head */
 
-	if (head) /* if head is not NULL */
+	if (*head) /* if head is not NULL */
 	{
 		newh = (*head)->next; /* new head points to next node */
 		popped_data = (*head)->n; /* assign head data to popped data var */
