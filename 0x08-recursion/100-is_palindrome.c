@@ -25,7 +25,7 @@ int is_palindrome(char *s)
 int check_drome(char *s)
 {
 	/* lengh of string excluding null terminator */
-	int l = _strlen_recursion(s) - 1;
+	int l = _strlen_recursion(s);
 
 	if (*s == s[l]) /* checking if string halves are identical */
 	{
