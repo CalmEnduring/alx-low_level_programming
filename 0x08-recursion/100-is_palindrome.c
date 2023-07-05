@@ -13,7 +13,7 @@ int is_palindrome(char *s)
 	if (*s == '0') /* error */
 		return (1);
 
-	return (check_palindrome(s));
+	return (check_drome(s));
 }
 
 /**
