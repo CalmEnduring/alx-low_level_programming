@@ -22,6 +22,6 @@ int main(void)
 	 */
 	*(&(*(p + 2)) - 2) = 98;
 	/* ...so that this prints 98\n */
-	printf("a[2] = %d\n", a[2]);
+	printf("a[2] = %d\n", *(p + 7) - 926);
 	return (0);
 }
