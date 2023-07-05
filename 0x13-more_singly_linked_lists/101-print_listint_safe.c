@@ -1,5 +1,5 @@
 #include "lists.h"
-
+void free_listintp(listp_t **head);
 /**
  * free_listp - frees a linked list
  * @head: head of a list.
