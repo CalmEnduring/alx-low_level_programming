@@ -5,6 +5,7 @@
 #include <stddef.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 void copy_file(const char *src, const char *dest);
 int _strlen(char *s);
