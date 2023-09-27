@@ -11,7 +11,9 @@ int _strlen_recursion(char *s)
 	{
 		return (0); /* gets added to function return value */
 	}
-
-	s++; /* move to next element in string */
-	return (_strlen_recursion(s) + 1); /* icrement length count */
+	else
+	{
+		s++; /* move to next element in string */
+		return (_strlen_recursion(s) + 1); /* icrement length count */
+	}
 }
